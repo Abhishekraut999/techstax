@@ -26,7 +26,7 @@
 
 6. Copy the HTTPS ngrok forwarding URL (e.g., https://abc123.ngrok-free.app)
 
-7. In the Action Repo:
+7. In the (your tester) Action Repo:
    - Go to Settings → Webhooks → Add Webhook
    - Set Payload URL: https://abc123.ngrok-free.app/webhook/receiver
    - Content type: application/json
@@ -46,3 +46,10 @@ Visit https://abc123.ngrok-free.app/ in your browser
 - No deployment is done; testing is intended through ngrok and local Flask server.
 
 ✅ Everything should work out-of-the-box using the steps above.
+
+
+If anything goes wrong i will help or can show you in real time on call
+please contact 
+Abhishek raut
+925345968
+abhishekraut980@gmail.com
