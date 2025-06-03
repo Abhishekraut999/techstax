@@ -20,7 +20,9 @@
    python run.py
 
 5. Open a new terminal and expose the local server using ngrok:
-   ngrok http 5000
+   - sudo snap install ngrok
+   - ngrok config add-authtoken 2xrLswqrQpkUTVsufBXaG0OkpN2_6p1jqM2D6cH3yFhgb6M7Y
+   - ngrok http 5000 
 
 6. Copy the HTTPS ngrok forwarding URL (e.g., https://abc123.ngrok-free.app)
 
