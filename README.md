@@ -1,47 +1,82 @@
-# Dev Assessment - Webhook Receiver
 
-Please use this repository for constructing the Flask webhook receiver.
+# 📦 GitHub Webhook Assignment – Submission Notes
 
-*******************
+## 🔗 Repositories:
+- **Action Repo**: [INSERT ACTION-REPO LINK HERE]
+- **Webhook Repo**: [INSERT WEBHOOK-REPO LINK HERE]
 
-## Setup
+---
 
-* Create a new virtual environment
+## 👩‍💻 How to Test:
 
+### 1. Clone the webhook repo:
 ```bash
-pip install virtualenv
+git clone <webhook-repo-link>
+cd <repo-folder>
 ```
 
-* Create the virtual env
-
-```bash
-virtualenv venv
+### 2. Ensure MongoDB is running on your machine at:
+```
+mongodb://localhost:27017/webhook_db
 ```
 
-* Activate the virtual env
-
-```bash
-source venv/bin/activate
-```
-
-* Install requirements
-
+### 3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-* Run the flask application (In production, please use Gunicorn)
-
+### 4. Start the Flask backend:
 ```bash
 python run.py
 ```
 
-* The endpoint is at:
-
+### 5. Open a new terminal and expose the local server using ngrok:
 ```bash
-POST http://127.0.0.1:5000/webhook/receiver
+ngrok http 5000
 ```
 
-You need to use this as the base and setup the flask app. Integrate this with MongoDB (commented at `app/extensions.py`)
+### 6. Copy the HTTPS forwarding URL (e.g., `https://abc123.ngrok-free.app`)
 
-*******************
+---
+
+## 7. Setup Webhook in Action Repo:
+
+1. Go to **Settings → Webhooks → Add Webhook**
+2. Set:
+   - **Payload URL**: `https://abc123.ngrok-free.app/webhook/receiver`
+   - **Content type**: `application/json`
+3. Select events:
+   - ✅ Push  
+   - ✅ Pull Requests
+
+---
+
+## 🧪 Test the Functionality
+
+- 🔄 Do a **Push** → should store and display a push event  
+- 🔀 Create a **Pull Request** → should store a PR event  
+- ✅ **Merge a PR** → should show a merge event (brownie points)
+
+---
+
+## 🖥️ Dashboard UI
+
+Visit your forwarded URL in the browser (e.g.):
+```
+https://abc123.ngrok-free.app/
+```
+
+- Events are pulled from MongoDB every 15 seconds and shown in formatted logs.
+
+---
+
+## 📌 Notes:
+
+- MongoDB must be running locally for event storage.
+- This is a local setup using ngrok (no deployment).
+- You can replace `<webhook-repo-link>` and URLs as per your test environment.
+
+---
+
+
+Follow the steps above to test and verify. Everything should work as expected.
