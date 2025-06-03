@@ -9,6 +9,7 @@
 1. Clone the webhook repo:
    git clone <webhook-repo-link>
    cd <repo-folder>
+   setup venv.
 
 2. Ensure MongoDB is running on your machine at:
    mongodb://localhost:27017/webhook_db
